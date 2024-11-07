@@ -1,0 +1,41 @@
+/*Simple login page interface accessing 
+website content */
+#include <iostream>
+#include <string>
+
+ void Log_interf(){                                                      // user defined function 
+
+    const int numUsers = 3;                                            // assigning value for array
+    std::string users[numUsers] = {"user1", "user2", "user3"};        // storing usernames & password
+    int keys[numUsers] = {880250, 462825, 774173};                                            
+    std::string ver_id; 
+    int ver_key; 
+    bool access_granted = false;                                     // check if a enter in page
+        
+    std::cout << "**********Welcome to cyberCrest***************" << '\n';   // title 
+    std::cout << "unlock a World of innovation and possibilities" << '\n';
+    std::cout << "Enter email: "; 
+    std::cin >> ver_id; 
+    for(int i = 0; i < numUsers; i++) {                               // verify if usernames is valid or not 
+        if(ver_id == users[i]) {
+            std::cout << "Enter password: ";  
+            std::cin >> ver_key;                                  // user feedback
+            if(ver_key == keys[i]) {                             // ensuring password is correct 
+                std::cout << "login successful!!" << '\n';      // if both true the page is unlock
+                access_granted = true;
+                break; 
+            } 
+        } 
+    }
+    
+    if (!access_granted) {                                      // else print this string
+        std::cout << "Invalid credentials" << '\n'; 
+    }
+
+} /*You can also add 
+buttons textbox and Gui*/
+int main(){   
+  Log_interf(); 
+    return 0;
+} 
+    
